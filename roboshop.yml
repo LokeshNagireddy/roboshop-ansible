@@ -1,4 +1,5 @@
 - name: Roboshop project Setup
-  hosts: all
+  hosts:
+    - ansible_connection: localhost
   roles:
     - "{{ role_name }}"
