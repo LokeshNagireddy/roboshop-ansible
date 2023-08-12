@@ -3,12 +3,12 @@
 
 - name: Install nodeJS
   ansible.builtin.yum:
-    name: nodeJS
+    name: nodejs
     state: installed
 
 - name: Run Pre-requisites
   ansible.builtin.import_tasks:
-    name: app_prereq.yml
+    file: app_prereq.yml
 
 - name: Install nodeJS dependencies
   ansible.builtin.shell: npm install
@@ -17,8 +17,8 @@
 
 - name: Install Schema mongodb
   ansible.builtin.import_tasks:
-    name: schema_setup.yml
+    file: schema_setup.yml
 
 - name: Include SystemD
   ansible.builtin.import_tasks:
-    name: systemd_setup.yml
+    file: systemd_setup.yml
