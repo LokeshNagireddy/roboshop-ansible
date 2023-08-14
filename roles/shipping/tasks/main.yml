@@ -1,3 +1,4 @@
-- name: Shipping tasks
-  ansible.builtin.debug:
-    msg: Component - Shipping
+- name: Run Tasks of the common playbook
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: java
